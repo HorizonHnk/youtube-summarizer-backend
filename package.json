@@ -1,4 +1,9 @@
-﻿{
+# Go back to your backend folder
+cd C:\Users\Dell\Documents\VS-Code\Smart-Learn\youtube-summarizer-fullstack\backend-render
+
+# Update package.json with all needed dependencies
+@"
+{
   "name": "youtube-summarizer-backend",
   "version": "1.0.0",
   "main": "server.js",
@@ -12,5 +17,14 @@
     "axios": "^1.10.0",
     "@google/generative-ai": "^0.24.1",
     "youtube-transcript": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
+"@ | Out-File -FilePath "package.json" -Encoding UTF8 -Force
+
+# Commit and push the fix
+git add .
+git commit -m "Fix package.json for Render deployment"
+git push
